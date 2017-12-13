@@ -41,7 +41,7 @@ public class MainActivity extends BaseActivity {
                         break;
                     case R.id.rb4:
                         manager.beginTransaction().replace(R.id.fram,new FragmentMine()).commit();
-                        break;
+                        break; 
                 }
             }
         });
