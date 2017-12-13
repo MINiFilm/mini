@@ -1,35 +1,50 @@
 package com.minifilm.activity;
 
-import android.graphics.Color;
 import android.os.Bundle;
+import android.support.annotation.IdRes;
+import android.support.v4.app.FragmentManager;
+import android.widget.RadioGroup;
 
-import com.hjm.bottomtabbar.BottomTabBar;
 import com.minifilm.R;
 import com.minifilm.fragment.FragmentChoice;
 import com.minifilm.fragment.FragmentFind;
+import com.minifilm.fragment.FragmentMine;
 import com.minifilm.fragment.FragmentSpecial;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
 public class MainActivity extends BaseActivity {
-
-    @Bind(R.id.bottom)
-    BottomTabBar bottom;
+    @Bind(R.id.rg)
+    RadioGroup rg;
+    private FragmentManager manager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
-        bottom.init(getSupportFragmentManager())
-                .setImgSize(40, 40)
-                .setFontSize(15)
-                .setTabPadding(4, 6, 10)
-                .setChangeColor(Color.parseColor("#FD6C6C"), Color.GRAY)
-                .addTabItem("精选", R.mipmap.found_select, R.mipmap.found, FragmentChoice.class)
-                .addTabItem("专题", R.mipmap.special_select, R.mipmap.special, FragmentSpecial.class)
-                .addTabItem("发现", R.mipmap.fancy_select, R.mipmap.fancy, FragmentFind.class)
-                .addTabItem("我的", R.mipmap.my_select, R.mipmap.my, FragmentMine.class);
+
+        manager = getSupportFragmentManager();
+        rg.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, @IdRes int checkedId) {
+                switch (checkedId){
+                    case R.id.rb1:
+                        manager.beginTransaction().replace(R.id.fram,new FragmentChoice()).commit();
+                        break;
+                    case R.id.rb2:
+                        manager.beginTransaction().replace(R.id.fram,new FragmentSpecial()).commit();
+                        break;
+                    case R.id.rb3:
+                        manager.beginTransaction().replace(R.id.fram,new FragmentFind()).commit();
+                        break;
+                    case R.id.rb4:
+                        manager.beginTransaction().replace(R.id.fram,new FragmentMine()).commit();
+                        break;
+                }
+            }
+        });
+
     }
 }

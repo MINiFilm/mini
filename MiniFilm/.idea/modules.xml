@@ -3,13 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/MiniFilm.iml" filepath="$PROJECT_DIR$/MiniFilm.iml" />
-<<<<<<< HEAD
-=======
-      <module fileurl="file://$PROJECT_DIR$/MiniFilm.iml" filepath="$PROJECT_DIR$/MiniFilm.iml" />
-      <module fileurl="file://$PROJECT_DIR$/MiniFilm.iml" filepath="$PROJECT_DIR$/MiniFilm.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
->>>>>>> 6155653c3aaf92b4d4b40d0ce6094cdbb99fff70
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>

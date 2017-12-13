@@ -6,6 +6,6 @@ package com.minifilm.api;
 
 public class Api {
 
-    public static String BASEURL= "http://api.svipmovie.com/";
+    public static String BASEURL= "http://api.svipmovie.com/front/";
 
 }

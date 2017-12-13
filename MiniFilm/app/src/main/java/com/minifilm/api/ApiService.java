@@ -1,6 +1,9 @@
 package com.minifilm.api;
 
 import com.minifilm.bean.ChoiceBean;
+import com.minifilm.bean.CommandBean;
+import com.minifilm.bean.DetailsBean;
+import com.minifilm.bean.FindBean;
 
 import io.reactivex.Flowable;
 import retrofit2.http.GET;
@@ -13,15 +16,36 @@ import retrofit2.http.Query;
 public interface ApiService {
 
     /**
-     *  首页
+     *  首页  专题
+     *   http://api.svipmovie.com/front/homePageApi/homePage.do
      */
     @GET("front/homePageApi/homePage.do")
     Flowable<ChoiceBean> getChoiceData();
 
     /**
-     * 频道列表
+     * 发现
+     * http://api.svipmovie.com/front/columns/getVideoList.do?catalogId=402834815584e463015584e539330016&pnum=9
      */
     @GET("columns/getVideoList.do")
-    Flowable<> getPinDaoData(@Query("catalogId")String catalogId,@Query("pnum")String pnum);
+    Flowable<FindBean> getFindData(@Query("catalogId")String catalogId, @Query("pnum")String pnum);
+
+    /**
+     * 评论列表
+     * http://api.svipmovie.com/front/Commentary/getCommentList.do?mediaId=CMCC_00000000000000001_621653189
+     */
+    @GET("Commentary/getCommentList.do")
+    Flowable<CommandBean> getCommantData(@Query("mediaId")String mediaId);
+
+    /**
+     * 详情
+     */
+    @GET("videoDetailApi/videoDetail.do")
+    Flowable<DetailsBean> getDetailsData(@Query("mediaId")String mediaId);
+
+    /**
+     * 搜索
+     */
+//    @GET("searchKeyWordApi/getVideoListByKeyWord.do")
+//    Flowable<> getSearchData(@Query("keyword")String keyword,@Query("pnum") String pnum);
 
 }
