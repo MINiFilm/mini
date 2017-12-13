@@ -8,16 +8,16 @@ import android.view.View;
 import android.view.ViewGroup;
 
 /**
- * 1.类的用途
- * 2.@author棒棒糖：赵姗杉
- * 3.@date2017/12/13  15：03
+ * Created by 巩雨松 on 2017/12/13.
+ * 14:28
  */
 
-public class FragmentFind  extends Fragment{
+public class FragmentMine extends Fragment {
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+
         return super.onCreateView(inflater, container, savedInstanceState);
-        
     }
 }
