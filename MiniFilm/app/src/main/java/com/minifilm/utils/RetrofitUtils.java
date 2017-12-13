@@ -27,7 +27,7 @@ public class RetrofitUtils {
 
     private Retrofit retrofit;
     //单例设计模式
-    //懒汉 只声明不创建 私有的静态的成员变量
+    //懒汉 只声明不创建 私有的静态的 成员变量
     private static RetrofitUtils apiRetrofit = null;
 
     //私有的构造方法
